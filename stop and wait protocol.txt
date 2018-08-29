@@ -1,0 +1,21 @@
+#include<stdio.h>
+#include<stdlib.h>
+void main()
+{
+int file=1,e,s=1;
+while(s!=0)
+{
+printf("%d frame is sent\n\n",file);
+e=rand();
+while(e%2==0)
+{
+printf("Error occured\n\n");
+printf("Resend frame %d\n\n",file);
+e=rand();
+}
+if(e%2!=0){printf("Data is successfully received\n\n");}
+printf("Do you want to continue\n\n");
+scanf("%d",&s);
+f=f+1;
+}
+}

@@ -1,0 +1,53 @@
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+char ipa[10][20]={"192.168.0.65","192.168.0.60","192.168.0.68","132.147.3.3"};
+char eta[10][20]={"00_A8_00_40_8E_FS","00_16_17_31_8E_22","00_16_17_31_8E_F7","00_16_17_31_8E_08"};
+char ipaddr[20],etaddr[20];
+int i,op;
+int x=0,y=0;
+while(1)
+{
+printf("\n\n1.ARP\n2.RARP\n3.EXIT\n");
+printf("Enter the choice\n");
+scanf("%d",&op);
+switch(op)
+{
+case 1 :
+printf("\n Enter IP address\n");
+scanf("%s",&ipaddr);
+for(i=0;i<=20;i++)
+{
+if(strcmp(ipaddr,ip[i])==0)
+{
+printf("Ethernet Address is %s",eta[i]);
+x=1;
+}
+}
+if(x==0)
+printf("\nInvalid IP address");
+x=0;
+break;
+case 2:
+printf("Enter Ethernet Address\n");
+scanf("%s",etaddr);
+for(i=0;i<=20;i++)
+{
+if (strcmp(etaddr,eta[i])==0)
+{
+printf("IP Address is %s",ipa[i]);
+y=1;
+}
+}
+if(y==0)
+printf("Invalid Ethernet Address\n");
+y=0;
+break;
+case 3:
+printf("\nEXIT");
+return 0;
+}
+}
+}
+

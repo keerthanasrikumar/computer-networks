@@ -1,0 +1,24 @@
+#include<stdio.h>
+int main()
+{
+int windowsize,sent=0,ackn,i;
+printf("Enter the window size\n");
+scanf("%d",&windowsize);
+while(1)
+{
+for(i=0;--i<windowsize;i++)
+{
+printf("\nFrame %d has been transmitted",sent);
+sent++;
+if(sent==windowsize)
+break;
+}
+printf("\nPlease enter the last acknowledgement received..\n");
+scanf("%d",&ack);
+if(ackn==windowsize)
+break;
+else
+sent=ackn;
+}
+return 0;
+}

@@ -1,0 +1,27 @@
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+int windowsize,sent=0,ack,i,e[10];
+printf("enter window size\n");
+scanf("%d",&windowsize);
+for( i = 0; i < windowsize; i++)
+{
+printf("Frame %d has been transmitted.\n",sent);
+sent++;
+if(sent == windowsize)
+break;
+}
+for(i=0;i<windowsize;i++)
+{
+e[i]=rand();
+if((e[i]%2)!=0)
+{
+printf("Error occur at %dth frame \n\n",i);
+printf(" %dth frame is resent\n\n",i);
+e[i]=rand();
+i=i-1;
+}
+}
+printf("\n Frames are successfully received\n\n");
+}
